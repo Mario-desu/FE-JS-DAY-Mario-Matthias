@@ -1,3 +1,5 @@
+// Car class
+
 class Car {
     brand;
     model;
@@ -8,19 +10,26 @@ class Car {
         this.model = md;
         this.yearBuilt = yb;
 
-    }
+    }// method:
     carMessage(){
         return `My ${this.brand} ${this.model} was built in ${this.yearBuilt}.<br>`;
     }
 }
-
+//instances of objects
 let car1 = new Car("Ford", "Focus", 2001);
 let car2 = new Car("BMW", "i3", 2013);
 let car3 = new Car("Mercedes", "E-class", 2019);
 
+
+//print messages
 document.getElementsByClassName("message")[0].innerHTML = car1.carMessage();
 document.getElementsByClassName("message")[0].innerHTML += car2.carMessage();
 document.getElementsByClassName("message")[0].innerHTML += car3.carMessage();
+
+
+// Animal class
+
+
 
 class Animal {
     type;
@@ -48,6 +57,12 @@ document.getElementsByClassName("message")[1].innerHTML += animal1.animalMessage
 document.getElementsByClassName("message")[1].innerHTML += animal2.animalMessage();
 document.getElementsByClassName("message")[1].innerHTML += animal3.animalMessage();
 
+
+
+// Person class
+
+
+
 class Person {
     fName;
     lName;
@@ -62,9 +77,22 @@ class Person {
         return `The person's name is ${this.fName} ${this.lName} and they are ${this.age} years old. <br>`;
     }
 }
+
 let person1 = new Person("Peter", "Jackson", 235);
 let person2 = new Person("Matthias", "Mauritz", 24);
 let person3 = new Person("Mario", "Hartleb", 19);
-document.getElementsByClassName("message")[2].innerHTML += person1.personMessage();
-document.getElementsByClassName("message")[2].innerHTML += person2.personMessage();
-document.getElementsByClassName("message")[2].innerHTML += person3.personMessage();
+
+let messageName = document.getElementsByClassName("message")[2];
+
+let persons = [person1,person2,person3];
+
+//for of loop
+for(let i of persons){
+    messageName.innerHTML+=i.personMessage();
+}
+
+
+
+
+
+
